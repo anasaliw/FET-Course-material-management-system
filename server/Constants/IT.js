@@ -14,6 +14,7 @@ export const information_technology = [
     technologies:
       "HTML, CSS, Javascript, JSON, PHP, Node JS, Python, CURL, Docker",
     supervisor: "Dr. Muhammad Ali Memon",
+    url: "https://1.bp.blogspot.com/-PHSJ68mXcbk/WqelBz2DN-I/AAAAAAAAS50/T7gwMGIsLbEDu5AeVaQohrqn7SK91i3dwCLcBGAs/s1600/blockchain-automotive.jpg",
   },
 
   //Example of Project 2
@@ -30,6 +31,7 @@ export const information_technology = [
 
     technologies: "HTML5, CSS3, JavaScript, PHP, SQL",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://1.bp.blogspot.com/-I1Qv4LX-et4/XndHWmxYErI/AAAAAAAAAM0/7n7M11AAUBA-8UwNfxYjMPhzsdQgZCduQCLcBGAsYHQ/s1600/pengertian-jaringan-peer-to-peer-680x350.jpg",
   },
 
   //Project 3
@@ -46,6 +48,7 @@ export const information_technology = [
 
     technologies: "Java, XML, Firebase, Google Maps Api, Andriod Studio",
     supervisor: "Ms. Nazish Bashir",
+    url: "https://www.hdcarwallpapers.com/walls/land_rover_discovery_red_cross_emergency_response_vehicle_2-HD.jpg",
   },
 
   //Project 4
@@ -62,6 +65,7 @@ export const information_technology = [
 
     technologies: " Flutter, Dart,  Net Beans",
     supervisor: "Ms. Nazish Bashir",
+    url: "https://i.pinimg.com/originals/47/1c/ee/471cee64887cd2cc74cb119310c42e4b.jpg",
   },
 
   //Project 5
@@ -78,6 +82,7 @@ export const information_technology = [
 
     technologies: "HTML, CSS, Javascript, ASP.Net, C#, SQL",
     supervisor: "Dr. Muhammad Ali Memon",
+    url: "https://i.pinimg.com/736x/2a/58/06/2a58061c0e8bf1af791f8ef6589aa0e8.jpg",
   },
 
   //Project 6
@@ -95,6 +100,7 @@ export const information_technology = [
 
     technologies: "HTML, CSS, Bootstrap 4, PHP, MYSQLI",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://ak0.picdn.net/shutterstock/videos/1891420/thumb/1.jpg",
   },
 
   //Project 7
@@ -111,6 +117,7 @@ export const information_technology = [
 
     technologies: "Java, XML, JSON, Firebase",
     supervisor: "Ms. Nazish Bashir",
+    url: "https://cdn.slidesharecdn.com/ss_thumbnails/cppqrcode-190604174914-thumbnail-4.jpg?cb=1559670640",
   },
 
   //Project 8
@@ -127,6 +134,7 @@ export const information_technology = [
 
     technologies: "Java, JSP, JavaScript, AJAX, MYSQL",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://realtypillar.com/images/slider1.jpg",
   },
 
   //Project 9
@@ -143,6 +151,7 @@ export const information_technology = [
 
     technologies: "HTML, CSS, Javascript, PHP, Laravel, MYSQL",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://allaboutlimassol.com/en/assets/components/phpthumbof/cache/211024-0.blood.9e9528c42ec251323ecafee1d72d3b11.jpg",
   },
 
   //Project 10
@@ -159,5 +168,6 @@ export const information_technology = [
 
     technologies: "HTML, CSS, Javascript, Jquery, PHP, MYSQL",
     supervisor: "Dr. Bisharat Rasool Memon",
+    url: "https://0.s3.envato.com/files/65782653/Preview%20Image_076.jpg",
   },
 ];

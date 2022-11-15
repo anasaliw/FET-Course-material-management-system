@@ -13,11 +13,12 @@ export const Electronic = [
     technologies:
       "Arduino UNO, Node MCU, 298 Motor driver, Radiofrequency scanner, Radiofrequency tags, Buck converter 5amp, Lithiom ion batteries, Ultrasonic sensor, Ultrasonic holders, LCD, 12C converter, DC Motor 12V, Structure sheet, Push button module, 12v charger, Jumper wires, Ardunio power connector, cell holders, switches 12v, Solar panel, Ardunio IDE,  flow chart, Circuit connection, Circut working, ",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://media.istockphoto.com/id/611205586/photo/inputing-passwords-on-an-electronic-door-lock.jpg?s=612x612&w=0&k=20&c=zRQDrvaqJ1PfqMlcvIuaqoaWh6yrjzFf70KxbYwc8F8=",
   },
 
   //Example of Project 2
   {
-    title: "Microcontroller Based electronic Vehicle",
+    title: "Micro controller Based electronic Vehicle",
     batch: 2018,
     department: "Electronics",
     names_with_roll_number:
@@ -27,8 +28,9 @@ export const Electronic = [
       "Building collapse is a common phenomenon associated with multiple disasters, including those caused by so-called natural hazards such as earthquakes and tsunamis and landslides, as well as technological hazards such as sub-standard construction and maintenance practices, and conflict. Worldwide, over the past So years there have been 181 building collapse disasters reported in 51 nations. 6 of these events occurred in Pakistan. Four more nations comprise a higher tier of incidence, including China (13), Egypt (13), Brazil (12), Nigeria (12). According to DisasterDoc an average of 8 building collapse disasters occur every year worldwide, resulting in 343 deaths/year. Each event killed an average of 38 persons. Every year, around 60,000 people die worldwide in natural disasters. This is despite the fact that engineering solutions exist that can almost completely eliminate the risk of such deaths. We've designed Microcontroller vehicle, also it is used to carry small weights for example the food, water bottle and first aid kit for the injured ones trapped inside a collapsed building or a coal mine until the rescue team arrives. The camera module is used to provide inside visual, We can get the video feed through accessing the IP add or through WiFi/hotspot interface. Two drillers are also connected with the vehicle which are used for drilling purpose. This vehicle will go through such narrow places where rescue team cannot easily go. The aim of designing this vehicle is to save the precious lives and reduce the chance of deaths in such conditions",
 
     technologies:
-      "Arduino , Microcontroller ESP32, Watt Boost converter, Eight channel relay module, LM2596 step down power supply, ESP3 camera module, DC gear module, XL4015, PCA 9685, Robotic arm, MG945 servo motor, MG996R servo motor, Two channel relay module, Ten kilo OHMS slide potentiometer, Joystick module, Omni wheels, Arduino IDE, Fritizing ",
+      "Arduino , Micro controller ESP32, Watt Boost converter, Eight channel relay module, LM2596 step down power supply, ESP3 camera module, DC gear module, XL4015, PCA 9685, Robotic arm, MG945 servo motor, MG996R servo motor, Two channel relay module, Ten kilo OHMS slide potentiometer, Joystick module, Omni wheels, Arduino IDE, Fritizing ",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://assets.skyfilabs.com/images/blog/microcontroller-projects.webp",
   },
 
   //Example of Project 3
@@ -45,6 +47,7 @@ export const Electronic = [
     technologies:
       "Arduino Nano, Power, Memory, Arduino Nano Pinout Configuration, 12C Module, LCD 16*2, MLX90614, Laser lights, Vero board, 5 volt 3 ampere charger, Light dependent resistor, Metal gear servo motor 180 degree, 2 pin, 3 pin, and 4 pin connectors, 2 and 4 pin connectors, Green vero board, solder wire , DC jack, Blue 2 pin connector, On/Off button, working principle  ",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://nmgprod.s3.amazonaws.com/media/editorial/2020/07/07/revised-antlia.jpg",
   },
 
   //Example of Project 4
@@ -61,11 +64,12 @@ export const Electronic = [
     technologies:
       "Microcontroller ESP-32, Internal memory, Features of ESP-32, Pulse sensor, Voltage regulator, Jumper wires, ANdriod Stusio, Arduino IDE, Firebase, ",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://www.researchgate.net/profile/Mengzhen-Kang/publication/327063774/figure/fig4/AS:667415344082946@1536135626101/IoT-based-Pennellii-1-environmental-monitoring-system-a-Device-b-App-and-c.jpg",
   },
 
   //Example of Project 5
   {
-    title: "Smart Ventilazator using Arduino",
+    title: "Smart Ventilator using Arduino",
     batch: 2018,
     department: "Electronics",
     names_with_roll_number:
@@ -77,5 +81,6 @@ export const Electronic = [
     technologies:
       "Pulse Oximeter sensor, Bag valve mask, PWM controller, Arduino UNO, DC motor, Water white pipe, Adapter 12v amp, Chipboard sheet, Table wheels, Arduino IDE, Block diagram,",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs13104-020-05259-z/MediaObjects/13104_2020_5259_Fig1_HTML.jpg",
   },
 ];

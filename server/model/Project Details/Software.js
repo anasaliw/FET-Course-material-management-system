@@ -9,6 +9,7 @@ const software_Schema = mongoose.Schema(
     abstract: String,
     technologies: String,
     supervisor: String,
+    url: String,
   },
   { timestamps: true }
 );

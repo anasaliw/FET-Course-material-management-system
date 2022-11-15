@@ -13,6 +13,7 @@ export const Software = [
 
     technologies: "HTML, CSS, Javascript, Bootstrap, Jquery, PHP, SQL Server",
     supervisor: "Mr. Muhammad Hussain",
+    url: "https://c4.wallpaperflare.com/wallpaper/638/986/336/basket-bread-cakes-slices-wallpaper-preview.jpg",
   },
 
   // Project 2
@@ -27,8 +28,9 @@ export const Software = [
     abstract:
       "Integrated Health System is a web based system designed to facilitate the doctors, patients and storekeepers. This system will reduce the wastage of time and energy and money of patient. In Pakistan it is common problem that patient has to face too many difficulties when he wants to checkup the doctor. Suppose the biggest problem for a patient is that when he wants to get a check up, he has a big problem with the traffic. This traffic becomes a cause of waste of valuable time. The second problem we face is the wastage of energy and money. And we know how precious human time is and that time should not be wasted. So keeping these issues in mind, we are building a system that will eliminate all these problems. The second biggest problem is that it uses too much paper. So our system will solve this problem and we will try to use less paper. The system can look after inpatient, outpatient, records, database treatments, status illness billing in the pharmacy. Hospital currently uses a manual system for the management and maintenance of critical information. The current system uses a paper work in which information is incomplete or does not follow the standards. Forms are often lost in transfer between departments. Multiple copies of the same information exist in the hospital that may lead to inconsistency. The project has been planned to be having the view of distributed architecture, with centralized storage of the database. The application for the storage of the data has been planned. Using the constructs of MYSQLI Localhost server and all the user interfaces have been designed using the PHP and MYSQLI. The database connectivity is planned using the -SQL Connection- methodology. The standards of security and data protective mechanism have been given a big choice for proper usage.",
 
-    technologies: "Mr. Kamran Dahri",
-    supervisor: "HTML, CSS, Javascript, PHP, Bootstrip, MYSQL",
+    technologies: "HTML, CSS, Javascript, PHP, Bootstrip, MYSQL",
+    supervisor: "Mr. Kamran Dahri",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoPmLGlP1w_rAsTVaacyfDOF3Dl7eNX_32FrV293ZBPhDe28PlCv2GentswqeVOO_qlcU&usqp=CAU",
   },
 
   //Project 3
@@ -43,8 +45,9 @@ export const Software = [
     abstract:
       "With the introduction of smart phones and tablets, we can enjoy online shopping anytime and while sitting in any part of the world. Online shopping has certainly replaced the traditional way of shopping for daily goods and clothing. When we choose online shopping, we get the benefit of credibility. Today, almost every online store offers cash on delivery, free shipping and discounted prices. These online shopping stores eliminate the hassles of parking, getting stuck in traffic jams and standing in long queues for billing. They have also benefited those people who always complain of shortage of time. This is the reason, majority of the people have turned to online shopping. Here, they enjoy easy access to an attractive price range, prompt customer support, and free home delivery. There is no doubt that these are some of the attractive features that catches the attention of the consumers. Although there is one small issue that could make people lose interest in online shopping, it might not be possible to try-on clothes in such cases. Our motive here is to increase the time efficiency and improve the accessibility of trying clothes virtually by creating a virtual dressing room environment.",
 
-    technologies: "Prof. Dr Kamran Taj",
-    supervisor: "Dart, Flutter, Firebase",
+    technologies: "Dart, Flutter, Firebase",
+    supervisor: "Prof. Dr Kamran Taj",
+    url: "https://previews.123rf.com/images/peshkov/peshkov1806/peshkov180600356/103539136-vr-and-data-concept-abstract-virtual-reality-glasses-on-blurry-background-3d-rendering.jpg",
   },
 
   //Project 4
@@ -61,6 +64,7 @@ export const Software = [
 
     technologies: "HTML, CSS, Bootstrip, Javascript, Jquery, PHP, MYSQL ",
     supervisor: "Prof. Dr Kamran Taj",
+    url: "https://image.shutterstock.com/image-vector/landing-page-template-person-reading-260nw-2166599605.jpg",
   },
 
   //Project 5
@@ -78,6 +82,7 @@ export const Software = [
     technologies:
       "HTML, CSS, Javascript, Jquery, Bootstrip, Spring MVC, SQL Server, PostgreSQL Server",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://cdn.techjockey.com/blog/wp-content/uploads/2020/04/Employee-Monitoring-Software.png",
   },
 
   //Project 6
@@ -94,6 +99,7 @@ export const Software = [
 
     technologies: "React JS, Chakra UI, Firebase Authentication",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://thumbs.dreamstime.com/b/project-management-diagram-virtual-screen-business-finance-technology-concept-project-management-diagram-virtual-screen-130068869.jpg",
   },
 
   //Project 7
@@ -110,6 +116,7 @@ export const Software = [
 
     technologies: "Dart, Flutter, Firebase Database",
     supervisor: "Engr. Noor-Ul-Ain Patoli",
+    url: "https://img.freepik.com/free-vector/online-medicine-healthcare-service-flat_98292-8328.jpg?auto=format&h=200",
   },
 
   //Project 8
@@ -126,6 +133,7 @@ export const Software = [
 
     technologies: "Java, Google Firebase, Android Studio",
     supervisor: "Mr. Kamran Dahri",
+    url: "https://c0.wallpaperflare.com/preview/936/202/464/blog-business-copywriter-couch.jpg",
   },
 
   //Project 9
@@ -142,6 +150,7 @@ export const Software = [
 
     technologies: "HTML, CSS, SAAS, Node JS, JavaScript, Bootstrip, MongoBD",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROxRLb9ErrS5OWfAaPzkrSJjmps9ta0QNmb9XzCxmA3sZbalM3S_pWH6Mhhuv7yYM9PWU&usqp=CAU",
   },
 
   //Project 10
@@ -158,6 +167,7 @@ export const Software = [
 
     technologies: "Java, XML, Firebase",
     supervisor: "Prof. Kamran Dahri",
+    url: "https://media.istockphoto.com/id/521261573/photo/workplace-safety-handbook-manual-and-occupational-equipment-for-work-training.jpg?b=1&s=170667a&w=0&k=20&c=kwc2qgHJuyHbRy-GDlswsxrBzE6hxEMHFhzASEYQSfE=",
   },
   // Project 1
   {
@@ -173,6 +183,7 @@ export const Software = [
 
     technologies: "HTML, CSS, Javascript, PHP, Bootstrap, MYSQL",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://image.shutterstock.com/image-photo/back-view-young-asian-female-260nw-1091967197.jpg",
   },
 
   // Project 2
@@ -189,6 +200,7 @@ export const Software = [
 
     technologies: "Java, Net Beans, MYSQL",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://i.ytimg.com/vi/8HQ1_Fc6Uk4/maxresdefault.jpg",
   },
 
   //Project 3
@@ -205,6 +217,7 @@ export const Software = [
 
     technologies: "HTML, CSS, Javascript, Bootstrap, PHP, MYSQL ",
     supervisor: "Nazish Bahir",
+    url: "https://img.freepik.com/free-photo/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept_640221-156.jpg?w=2000",
   },
 
   //Project 4
@@ -222,6 +235,7 @@ export const Software = [
     technologies:
       "HTML, CSS, Javascript, Bootstrap, PHP, MYSQL, Firebase, Java, XML",
     supervisor: "Mr. Kamran Dahri",
+    url: "https://www.pbs.org/wgbh/nova/media/images/Xbox-Adaptive-Controller.width-2500.jpg",
   },
 
   //Project 5
@@ -238,6 +252,7 @@ export const Software = [
 
     technologies: "Java, XML, SQL Server",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://www.propertygeek.in/wp-content/uploads/2021/04/E-Stamping.png",
   },
 
   //Project 6
@@ -255,6 +270,7 @@ export const Software = [
 
     technologies: "Java, MYSQL",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://image.shutterstock.com/image-photo/using-smartphone-scanning-qr-code-260nw-1666240540.jpg",
   },
 
   //Project 7
@@ -271,6 +287,7 @@ export const Software = [
 
     technologies: "Java,  Android Studio, Android Features",
     supervisor: "Dr. Dil Nawaz Hakro",
+    url: "https://www.vidyalayaschoolsoftware.com/assets/images/blog-section/Why-Should-Education-Sector-use-SMS-Alert-System-for-School-22.jpg",
   },
 
   //Project 8
@@ -287,6 +304,7 @@ export const Software = [
 
     technologies: "HTML, CSS, Javascript, PHP, Bootstrap, MYSQL",
     supervisor: "Mr. Rahat Ali Khan",
+    url: "https://c4.wallpaperflare.com/wallpaper/274/345/106/girl-teddy-miss-photography-child-girl-little-you-autumn-wallpaper-preview.jpg",
   },
 
   //Project 9
@@ -304,6 +322,7 @@ export const Software = [
     technologies:
       "HTML, CSS, Javascript, Bootstrap, Jquery, PHP, Laravel, Node JS, Express JS, MYSQL, Docker, JSON",
     supervisor: "Muhammad Ali Memon",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKU6y1UHm8ZlPGmlHHVtnYwj-HDpt9P4iCdw&usqp=CAU",
   },
 
   //Project 10
@@ -320,6 +339,7 @@ export const Software = [
 
     technologies: "JSP, Java EE, Servlet Api, Tomcat Server",
     supervisor: "Muhammad Ali Nizamani",
+    url: "https://c0.wallpaperflare.com/preview/534/41/125/school-books-young-adult-education.jpg",
   },
   //Example of Project 1
   {
@@ -335,6 +355,7 @@ export const Software = [
     technologies:
       "HTML, CSS, Javascript, React JS, Node JS, MangoDB, express, Netlify for cloud computing",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ02xxpUILRMxrDPQFpZOrxP4cKCaP08J2Pw&usqp=CAU",
   },
 
   //Example of Project 2
@@ -352,6 +373,7 @@ export const Software = [
     technologies:
       "HTML, CSS, JavaScript, Bootstrap, Visual Studio IDE, SQL Server, ASP.NET, Net Framework",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://img.freepik.com/free-vector/family-moving-countryside-area-realtor-shows-townhouse-house-rent-booking-hose-online-best-rental-property-real-estate-services-concept-pinkish-coral-bluevector-isolated-illustration_335657-1959.jpg?w=2000",
   },
 
   //Example of Project 3
@@ -366,6 +388,7 @@ export const Software = [
       "Restaurant Automation System is a management system that will automate the whole restaurant's current order placement system and will provide customer with the flexibility of checking menus and placing their order without wasting their time calling a waiter. This will ultimately lead to hire fewer waiters and improve the financial position of the restaurant. ",
     technologies: "HTML, CSS, JavaScript, PHP, SQL, PHP PDO, PHP MySQL",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://www.vantiva.com/app/uploads/2022/09/commercial-video-solutions-bras-restaurants-1930x1122-1-768x446.jpg",
   },
 
   //Example of Project 4
@@ -380,6 +403,7 @@ export const Software = [
       "Online Doctor appointment System in hospital today necessitate a competent administration when handling patients, generating reports for cashier, patient details which serves as a key factor for the flow of business transactions in Razia Sultana Surgical Hospital. Unfortunately the current Record Management System Leads to misplacement of during details, Patient details and doctor record of reports and insecurity to records. This research project is aimed at computerizing all the records about Patients, Hospital and Doctors. In order to achieve this goal, a through System Study and investigation was carried out and data was collected and analyzed about the current system using document and data flow diagrams. The concept of report production has been computerized hence, no more delay in report generation to the Hospital, Patient and Doctors. Errors made on hand held calculators and dealt out completely. The method used to develop the system include iterative water full model approach, dataflow, logical and entity relationship diagram where used to design the system and finally the language usedMySQL, Php, laravel. ",
     technologies: "HTML, CSS, JavaScript, PHP, SQL, Laravel",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://i.ytimg.com/vi/rvFDbIoeNEQ/maxresdefault.jpg",
   },
 
   //Example of Project 5
@@ -394,6 +418,7 @@ export const Software = [
       "ChaloBhai is one effort to solve the problem of poor performance of public transport especially on bus transport in Sindh. ChaloBhai is built with the aim that people can use public transportation facilities with comfortable and safe. Although transport in public buses like Daewoo give us a comfortable drive but they are much expensive. The local transport that is less expensive offers us poor drive. We know that many people travel from one city to other especially on weekend days for their own work by own vehicle. They would like a passenger who would pay him for drive. Similarly a passenger will like a journey which could be comfortable and affordable. Our website will provide a platform both to passenger and driver, a driver could find a passenger who has to travel on the same route the driver is going. By signing up on our website a passenger and driver both can give their route of journey. The matching pair may travel together. The drivers don't need to pay tax to stop hawker or starter and passengers don't need to pay heavy fare. Both of them don't need to travel to bus stop. Driver could pick passengers from nearby location. use public transportation facilities with comfortable and safe. Although transport in public buses like Daewoo give us a comfortable drive but they are much expensive. The local transport that is less expensive offers us poor drive. We know that many people travel from one city to other especially on weekend days for their own work by own vehicle. They would like a passenger who would pay him for drive. Similarly a passenger will like a journey which could be comfortable and affordable. Our website will provide a platform both to passenger and driver, a driver could find a passenger who has to travel on the same route the driver is going. By signing up on our website a passenger and driver both can give their route of journey. The matching pair may travel together. The drivers don't need to pay tax to stop hawker or starter and passengers don't need to pay heavy fare. Both of them don't need to travel to bus stop. Driver could pick passengers from nearby location. ",
     technologies: "HTML, CSS, JavaScript, PHP, BootStrap, MySQL",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQltmMEqgUQuaUvetsQ-KthE6FkbYyL12uvvA&usqp=CAU",
   },
 
   //Example of Project 6
@@ -408,6 +433,7 @@ export const Software = [
       "Attempts to make the user community aware of e-news and e-news services offered by different e-news channels all around the world. Provides a brief discussion of history and developments of e-news services, newspaper websites and latent advantages of e-news in the electronic era. Employs literature survey method to unfold the latest trends of e-news industry and finds that, though e- news services provide immense opportunity to the readers and simultaneous access at infinite points and reading at one's convenience, still a few key technical challenges like, navigational support, hyper linking, and designing of e-newspapers needs to be properly taken care of and tackled with. Concludes with the recommendation that information professionals should take steps to increase the usage of e-newspapers by their intended audience. ",
     technologies: "HTML, CSS, JavaScript, PHP, SQL,",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://c0.wallpaperflare.com/preview/105/94/569/administration-articles-bank-black-and-white.jpg",
   },
 
   //Example of Project 7
@@ -422,6 +448,7 @@ export const Software = [
       "The project entitled Hospital Management System is useful for Hospitals and the Public. We are going to provide some new exciting features those others products like website don't provide. We, the people of Sindh find it difficult to reach the hospital in emergency, and if we had to make an appointment with our desired doctor. So, we think of developing a web application that displays complete hospital itself but in the form of, while the user using our app he feels like he's actually visiting the hospital, and get all the updates about his appointments and etc. without even visit there physically, and if someone finds something good is happening in hospital so he can get the benefit of that opportunity. We've added 3 main roles Admin, Doctor and User. Admin can manage whole hospital along with staff. Doctor can manage appointments related to him and his patients also. User can make appointment with his desired doctor. By the end of the project, all objectives will be successfully accomplished. There were some unresolved limitations found within the developed system due to time constraint and limited manpower. However, these limitations along with the suggestions for further enhancement can be looked into and brushed up in the future..!!",
     technologies: "HTML, CSS, JavaScript, JQuery, BootStrap, MySQL, Laravel",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://media-exp1.licdn.com/dms/image/C5112AQGWtgucUdunSA/article-cover_image-shrink_600_2000/0/1569135399718?e=2147483647&v=beta&t=x1wgrHoYfFwTQy_YF21sQWI5zI1HZx9CEu5RSf9RBwQ",
   },
 
   //Example of Project 8
@@ -436,6 +463,7 @@ export const Software = [
       "Online Home Appliances Repair System is basically providing home services for repairment of appliances (AC, Motor, Washing Machine and Plumber)where a user or customer can select appropriate skilled person for their purpose of work. In our system a user will check nearby worker if he/she wants quick service. Otherwise, he/she will select expert from another city as well. Also, a user will be able to review a worker and also a worker can review the customer for quality of service. Also, we will provide chatting system to make it more comfortable for customer. Admin will check everything regarding customer and worker, and also admin is responsible for sending workers to customer.",
     technologies: "Visual Studio, JavaScript, Python, MySQL",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://img.freepik.com/free-vector/two-repairmen-fixing-washing-machine-handymen-mentor-intern-with-tools-flat-illustration_74855-11161.jpg",
   },
 
   //Example of Project 9
@@ -450,6 +478,7 @@ export const Software = [
       "In this project On Route, The Personal Services Locator helps users to find personalized workers or Handymen as fast as possible. The issue of finding a person or an individual to do a certain job has always been around, even though it has been reduced with the use of adverts and various social media, it's not as fast and as efficient at locating people. This application finds the closest person(s) with the services running depending on which personalized service the user is looking for and which service the other user provides and links them together thus creating an appointment within the two users on where to meet and the transaction will be carried out. This software runs on Android and is developed using Java programming language. The software has three panels in which the first one is for the customer registration and the other is for the service provider registration. The third and the final panel is for the administrator to approve the service provider or the customer. The customer has to register for the service which he or she has to get at home or away. The administrator has to approve the customer and then the customer is given the area of contact and other services to avail. The other side of the project is the registration of the service provider where multiple service providers will register for their services to render and these services will have to be approved or disapproved by the administrator. After approval of the service provider and the customer both parties will be free to access the service provider and the service rendering person.",
     technologies: "Flutter, Java, SQL,",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://c4.wallpaperflare.com/wallpaper/825/61/261/road-numbers-route-66-motorcycle-vehicle-hd-wallpaper-preview.jpg",
   },
 
   //Example of Project 10
@@ -464,5 +493,6 @@ export const Software = [
       "Software house activity management system is a Web Based Application which is designed to provide easiness for those candidates who want to apply at software house and it also provide management of resources of those employees who are working in software house like their salary, total cost of project and distribution of working load of developers etc. It provides an effective way to apply at software house and get the job. The main objective of Software house activity management system is to provide the information about project which are developing at the software house. The Software house activity management system is a platform between the new candidate who are applying for job and the management team of software house, developers, and Software house Owners. The Project manager enters lines of code duration of project and total and our application will estimate the cost of project number of developer and testers required for that particular project and our application also provide platform to apply for new coming job in our organization and upload your cv on it as you can get job relevant to Your cv and experience The Employees who are working in our organization can get online slip of their salary according to their working hours etc. 3 The project has been planned to be having the view of distributed architecture, with centralized storage of the database. The application for the storage of the data has been planned. Using the constructs of MS-SQL Server and all the user interfaces have been designed using the ASP.Net technologies. The database connectivity is planned using the SQL Connection methodology. The standards of security and data protective mechanism have been given a big choice for proper usage. The application takes care of different modules and their associated reports, which are produced as per the applicable strategies and standards that are put forwarded by the administrative staff.",
     technologies: "HTML, CSS, JavaScript, JQuery, BootStrap,MVC, JSP",
     supervisor: "Dr. Abdul Waheed Mahesar",
+    url: "https://img.freepik.com/free-photo/asian-video-editor-working-with-multimedia-footage-editing-film-montage-with-color-grading-sound-working-freelance-home-using-post-production-software-make-movie_482257-48024.jpg?w=2000",
   },
 ];
