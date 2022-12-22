@@ -8,6 +8,16 @@ import { getSingleITProject } from "../Controllers/Get Single Projects/getSingle
 import { getSingleSoftwareProject } from "../Controllers/Get Single Projects/getSingleSoftwareProject.js";
 import { getSingleTelecomDetails } from "../Controllers/Get Single Projects/getSingleTelecomProject.js";
 import { getSingleElectronicsProject } from "../Controllers/Get Single Projects/getSingleElectronicsProject.js";
+import {
+  loginStudent,
+  signUpStudent,
+} from "../Controllers/StudentController/StudentLogin.js";
+import {
+  addQuestion,
+  getAllQuestion,
+  postAnswer,
+  viewSingleQuestion,
+} from "../Controllers/DiscussionForumController/DiscussionForumControllers.js";
 const route = express.Router();
 
 //get All Projects
@@ -21,4 +31,16 @@ route.get("/getITProjects/:id", getSingleITProject);
 route.get("/getSoftwareProject/:id", getSingleSoftwareProject);
 route.get("/getTelecomProject/:id", getSingleTelecomDetails);
 route.get("/getElectronicsProject/:id", getSingleElectronicsProject);
+
+//Student Signup and Signin
+route.post("/registerStudent", signUpStudent);
+route.post("/loginStudent", loginStudent);
+
+// ! For DiscussionForum API
+
+route.post("/addQuestion", addQuestion);
+route.get("/getQuestions", getAllQuestion);
+route.get("/viewQuestion/:id", viewSingleQuestion);
+
+route.post("/postAnswer/:id", postAnswer);
 export default route;

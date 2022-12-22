@@ -7,11 +7,19 @@ import {
 // import { composeWithDevtools } from "redux-devtools-extension";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { LoginAPIReducer } from "./reducers/LoginReducer";
+import {
+  addQuestionReducer,
+  getQuestionsReducer,
+  getSingleQuestionReducer,
+} from "./reducers/DiscussionReducers/DiscussionReducers";
 
 const reducer = combineReducers({
-  getProjects: getThesisReducer,
+  getProject: getThesisReducer,
   getSingleProject: getSingleProjectReducer,
   loginResponse: LoginAPIReducer,
+  postQuestionResponse: addQuestionReducer,
+  getAllQuestions: getQuestionsReducer,
+  getSingleQuestion: getSingleQuestionReducer,
 });
 const middleware = [thunk];
 

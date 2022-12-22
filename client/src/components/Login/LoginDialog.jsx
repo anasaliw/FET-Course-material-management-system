@@ -1,6 +1,8 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+
 import {
   Dialog,
   DialogTitle,
@@ -10,7 +12,14 @@ import {
   Button,
   Typography,
   styled,
+  FormGroup,
+  FormControl,
+  Snackbar,
+  Alert,
+  FormControlLabel,
 } from "@mui/material";
+import Switch from "@mui/material/Switch";
+import LoadingButton from "@mui/lab/LoadingButton";
 import {
   Search as SearchIcon,
   Person as PersonIcon,
@@ -20,6 +29,9 @@ import {
 } from "@mui/icons-material";
 import { SignInSchema } from "../Yup/SignInSchema";
 import { loginAPI } from "../Redux/actions/LoginAction";
+import { useContext } from "react";
+import { DataProvider } from "../Context/ContextAPI";
+import { useNavigate } from "react-router-dom";
 
 const DialogTitleStyled = styled(DialogTitle)`
   text-align: center;
@@ -87,7 +99,7 @@ const StyledBox = styled(Box)`
   margin-top: 1rem;
 `;
 
-const LoginButton = styled(Button)`
+const LoginButton = styled(LoadingButton)`
   background-color: #4d148c;
   height: 2.5rem;
   width: 13.5rem;
@@ -157,44 +169,73 @@ const SignUpText = styled(Typography)`
 `;
 function LoginDialog({ open, setOpen }) {
   const dispatch = useDispatch();
+  // const [signedUp, setSignedUp] = React.useState(false);
+  // const [errorMsg, setErrorMsg] = React.useState("");
+  // const [error, setError] = React.useState("");
+  // const [openAlert, setOpenAlert] = React.useState(false);
+  // const [loadingButton, setLoadingButton] = React.useState(false);
+  const handleClick = () => {
+    setLoadingButton(true);
+  };
+  // const navigate = useNavigate();
+
+  const { account, setAccount } = useContext(DataProvider);
+  const handleAlert = () => {
+    setOpenAlert(false);
+    return;
+  };
 
   const signInValues = {
     rollNo: "",
     password: "",
   };
-
+  const { LoginResponse, loading } = useSelector(
+    (state) => state.loginResponse
+  );
   const { handleBlur, values, touched, errors, handleChange, handleSubmit } =
     useFormik({
       initialValues: signInValues,
       validationSchema: SignInSchema,
       validateOnChange: true,
-      onSubmit: async (values) => {
-        const { rollNo, password } = values;
-        console.log(rollNo);
-        //! API Call
+      onSubmit: async (values, action) => {
+        console.log("worked");
+        setLoadingButton(true);
+        // ! API Call
         const result = await dispatch(loginAPI(values));
-        console.log(result);
-        // const statusCode = result.status;
-        // console.log(statusCode);
 
-        // // ! result coming from useState
-        // console.log(result, "after dispatch method");
-        // if (statusCode === 200) {
-        //   console.log("UserLogin Login Successful");
-        //   //   setError(false);
-        //   //   setOpen(true);
-        //   //   handleClose();
-        //   // navigate("/");
-        // } else if (statusCode === 404) {
-        //   console.log("Email Not Found");
-        //   //   setError(true);
-        //   return;
-        // } else if (statusCode === 403) {
-        //   console.log("Password Does not match");
-        //   //   setError(true);
-        // }
+        // const LocalData = window.localStorage.getItem("user");
+
+        // setAccount(result.data.user.name);
+        // console.log(account);
+
+        console.log(loading);
+        const statusCode = result.status;
+        console.log(statusCode);
+        if (statusCode === 200) {
+          setAccount(false);
+          console.log(result.data.user);
+          console.log("UserLogin Login Successful");
+          setOpenAlert(true);
+          setOpen();
+          setLoadingButton(false);
+          navigate("/");
+          action.resetForm();
+          // setError(false);
+        } else if (statusCode === 404) {
+          console.log("Email or Roll Number Not Found");
+          setLoadingButton(false);
+          setError("Email or Roll Number not found");
+          return;
+        } else if (statusCode === 403) {
+          setLoadingButton(false);
+          console.log("Password Does not match");
+          setError("Password Does not match");
+
+          // setError(true);
+        }
       },
     });
+
   return (
     <>
       <Dialog
@@ -205,64 +246,88 @@ function LoginDialog({ open, setOpen }) {
         }}
       >
         <DialogTitleStyled>Sign In</DialogTitleStyled>
+
         <DialogContentStyled>
-          <TextBox>
-            <IconWrapper>
-              <EmailIconStyled />
-            </IconWrapper>
-            <TextFieldStyled
-              variant='standard'
-              placeholder='Email'
-              InputProps={{ disableUnderline: true }}
-              type='text'
-              name='rollNo'
-              onChange={handleChange}
-              value={values.rollNo}
-              onBlur={handleBlur}
-            />
-            {touched.rollNo && errors.rollNo ? (
-              <Typography style={{ fontSize: 12, color: "red" }}>
-                {errors.rollNo}
+          <FormGroup>
+            <FormControl>
+              <TextBox>
+                <IconWrapper>
+                  <EmailIconStyled />
+                </IconWrapper>
+                <TextFieldStyled
+                  variant='standard'
+                  placeholder='Roll No'
+                  type='text'
+                  InputProps={{ disableUnderline: true }}
+                  name='rollNo'
+                  onChange={handleChange}
+                  value={values.rollNo}
+                  onBlur={handleBlur}
+                />
+                {touched.rollNo && errors.rollNo ? (
+                  <Typography style={{ fontSize: 12, color: "red" }}>
+                    {errors.rollNo}
+                  </Typography>
+                ) : null}
+              </TextBox>
+            </FormControl>
+            <FormControl>
+              <TextBox>
+                <IconWrapper>
+                  <LockIconStyled />
+                </IconWrapper>
+                <TextFieldStyled
+                  variant='standard'
+                  placeholder='Password'
+                  InputProps={{ disableUnderline: true }}
+                  type='password'
+                  name='password'
+                  onChange={handleChange}
+                  value={values.password}
+                  onBlur={handleBlur}
+                />
+                {touched.password && errors.password ? (
+                  <Typography style={{ fontSize: 12, color: "red" }}>
+                    {errors.password}
+                  </Typography>
+                ) : null}
+              </TextBox>
+            </FormControl>
+            {error && (
+              <Typography
+                style={{ fontSize: 12, marginLeft: 30, color: "red" }}
+              >
+                {error}
               </Typography>
-            ) : null}
-          </TextBox>
-          <TextBox>
-            <IconWrapper>
-              <LockIconStyled />
-            </IconWrapper>
-            <TextFieldStyled
-              variant='standard'
-              placeholder='Password'
-              InputProps={{ disableUnderline: true }}
-              type='password'
-              name='password'
-              onChange={handleChange}
-              value={values.password}
-              onBlur={handleBlur}
-            />
-            {touched.password && errors.password ? (
-              <Typography style={{ fontSize: 12, color: "red" }}>
-                {errors.password}
-              </Typography>
-            ) : null}
-          </TextBox>
-          {/* {error && (
-                <Typography
-                  style={{ fontSize: 12, marginLeft: 30, color: "red" }}
+            )}
+            <StyledBox>
+              {/* <LoginButton onClick={handleSubmit}>Login</LoginButton> */}
+              <Box>
+                <LoginButton
+                  color='secondary'
+                  onClick={handleSubmit}
+                  loading={loadingButton}
+                  loadingPosition='end'
+                  endIcon={<LockOpenIcon />}
+                  variant='contained'
                 >
-                  Email or Password is wrong
-                </Typography>
-              )} */}
-          <StyledBox>
-            <LoginButton onClick={handleSubmit}>Login</LoginButton>
-            <OrText>OR</OrText>
-            <LoginWithGoogleButton>
-              <GoogleIcon />
-              <Typography>Login with Google</Typography>
-            </LoginWithGoogleButton>
-          </StyledBox>
+                  Login
+                </LoginButton>
+              </Box>
+              <OrText>OR</OrText>
+              <LoginWithGoogleButton>
+                <GoogleIcon />
+                <Typography>Login with Google</Typography>
+              </LoginWithGoogleButton>
+            </StyledBox>
+          </FormGroup>
         </DialogContentStyled>
       </Dialog>
+      <Snackbar open={openAlert} autoHideDuration={4000} onClose={handleAlert}>
+        <Alert onClose={handleAlert} severity='success' sx={{ width: "100%" }}>
+          You are successfully logged In!
+        </Alert>
+      </Snackbar>
     </>
   );
 }

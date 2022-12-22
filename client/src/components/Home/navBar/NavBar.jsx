@@ -11,6 +11,11 @@ import {
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import LoginDialog from "../../Login/LoginDialog";
+import { useContext } from "react";
+import { DataProvider } from "../../Context/ContextAPI";
+import AccountMenu from "./Account-menu";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const NavigationBar = styled(AppBar)`
   background-color: "#0a66c2";
@@ -45,9 +50,24 @@ const Btn = styled(Button)`
 function NavBar() {
   const [open, setOpen] = useState(false);
 
+  const { account, setAccount } = useContext(DataProvider);
+  var localStorageData = null;
+  // console.log(localStorageData);
+
+  useEffect(() => {
+    if (localStorage.getItem("user")) {
+      var localStorageData = JSON.parse(localStorage.getItem("user"));
+      // console.log(localStorageData);
+      setAccount(false);
+    }
+  }, []);
   const handleClose = () => {
     setOpen(false);
   };
+  const { LoginResponse, loading } = useSelector(
+    (state) => state.loginResponse
+  );
+
   return (
     <NavigationBar position='sticky'>
       <Toolbar>
@@ -59,23 +79,20 @@ function NavBar() {
           <NavLink to='/accreditation'> Accreditation.. </NavLink>
         </Container>
         <Box style={{ marginLeft: "auto" }}>
-          <Btn
-            variant='outline'
-            onClick={() => {
-              setOpen(true);
-            }}
-          >
-            Login
-          </Btn>
+          {account ? (
+            <Btn
+              variant='outline'
+              onClick={() => {
+                setOpen(true);
+              }}
+            >
+              Login
+            </Btn>
+          ) : (
+            <AccountMenu setAccount={setAccount} />
+          )}
         </Box>
-        <LoginDialog open={open} setOpen={setOpen} />
-        {/* <LinkWrapper>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/projects'>Projects</NavLink>
-          <NavLink to='/forum'>Forum</NavLink>
-          <NavLink to='/material'>Material</NavLink>
-          <NavLink to='/accreditation'>Accreditation</NavLink>
-        </LinkWrapper> */}
+        <LoginDialog open={open} setOpen={handleClose} />
       </Toolbar>
     </NavigationBar>
   );

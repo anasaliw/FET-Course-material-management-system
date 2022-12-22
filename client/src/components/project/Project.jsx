@@ -44,7 +44,8 @@ function Project() {
     dispatch(getProjects(endPoint));
   }, [dispatch, endPoint]);
 
-  const { projects, loading } = useSelector((state) => state.getProjects);
+  // ! we can get state from the store
+  const { projects, loading } = useSelector((state) => state.getProject);
 
   // console.log(loading);
 
