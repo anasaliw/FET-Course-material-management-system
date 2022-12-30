@@ -47,7 +47,7 @@ export const signUpStudent = async (req, res) => {
 };
 
 export const loginStudent = async (req, res) => {
-  console.log(req.body);
+  console.log("from student", req.body);
   try {
     const user = await AccountsSchema.findOne({
       $or: [

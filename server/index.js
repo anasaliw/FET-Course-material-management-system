@@ -5,6 +5,7 @@ import { Connection } from "./DBConnection/Connections.js";
 import dotenv from "dotenv";
 import route from "./Router/routes.js";
 import { AccountCreation } from "./Constants API/AccountCreation.js";
+import { teacherSignup } from "./Controllers/TeachersController/AccountCreation.js";
 // import { IT } from "./Constants API/IT.js";
 // import { ElectronicsAPI } from "./Constants API/Electronics.js";
 // import { TelecomAPI } from "./Constants API/Telecom.js";
@@ -28,6 +29,7 @@ Connection(username, password);
 // ElectronicsAPI();
 // TelecomAPI();
 // SoftwareAPI();
+// teacherSignup();
 
 const PORT = process.env.PORT || 8000;
 
