@@ -18,6 +18,8 @@ import {
   postAnswer,
   viewSingleQuestion,
 } from "../Controllers/DiscussionForumController/DiscussionForumControllers.js";
+import { loginTeacher } from "../Controllers/TeachersController/AccountLogin.js";
+import { AddCourse } from "../Controllers/TeachersController/AddCourse.js";
 const route = express.Router();
 
 //get All Projects
@@ -41,6 +43,12 @@ route.post("/loginStudent", loginStudent);
 route.post("/addQuestion", addQuestion);
 route.get("/getQuestions", getAllQuestion);
 route.get("/viewQuestion/:id", viewSingleQuestion);
-
 route.post("/postAnswer/:id", postAnswer);
+
+// ! Teacher Routes
+route.post("/loginTeacher", loginTeacher);
+
+// ? add course
+route.post("/addCourse/:ITSemester/:ITSubject", AddCourse);
+
 export default route;

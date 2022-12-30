@@ -8,7 +8,7 @@ import {
   Button,
   Dialog,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import LoginDialog from "../../Login/LoginDialog";
 import { useContext } from "react";
@@ -16,6 +16,7 @@ import { DataProvider } from "../../Context/ContextAPI";
 import AccountMenu from "./Account-menu";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import TeacherLoginDialog from "../../Login/TeacherLoginDialog";
 
 const NavigationBar = styled(AppBar)`
   background-color: "#0a66c2";
@@ -34,10 +35,10 @@ const Container = styled(Box)`
     font-weight: 600;
   }
   & > a.active {
-    background-color: #4795e2;
+    background-color: #00013f;
     border-radius: 5px;
     font-size: 22px;
-    border-bottom: 3px solid #0955a0;
+    /* border-bottom: 3px solid #0955a0;s */
   }
 `;
 const Btn = styled(Button)`
@@ -45,12 +46,23 @@ const Btn = styled(Button)`
   color: #fff;
   width: 100px;
   font-weight: 600;
+  background-color: #00013f;
+`;
+const LoginBTN = styled(Button)`
+  color: #fff;
+  background-color: #00013f;
+  margin-right: 10px;
+  & :hover {
+    background-color: #000118;
+  }
 `;
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const [teacherOpen, teacherSetOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const { account, setAccount } = useContext(DataProvider);
+  const { setTeacherAccount, account, setAccount } = useContext(DataProvider);
   var localStorageData = null;
   // console.log(localStorageData);
 
@@ -59,11 +71,19 @@ function NavBar() {
       var localStorageData = JSON.parse(localStorage.getItem("user"));
       // console.log(localStorageData);
       setAccount(false);
+    } else if (localStorage.getItem("teacher")) {
+      setTeacherAccount(false);
+      console.log("hello");
+      navigate("/dashboard");
     }
   }, []);
   const handleClose = () => {
     setOpen(false);
   };
+  const handleTeacherClose = () => {
+    teacherSetOpen(false);
+  };
+
   const { LoginResponse, loading } = useSelector(
     (state) => state.loginResponse
   );
@@ -79,6 +99,15 @@ function NavBar() {
           <NavLink to='/accreditation'> Accreditation.. </NavLink>
         </Container>
         <Box style={{ marginLeft: "auto" }}>
+          <LoginBTN
+            variant='contained'
+            onClick={() => {
+              teacherSetOpen(true);
+            }}
+          >
+            Login as Teacher
+          </LoginBTN>
+
           {account ? (
             <Btn
               variant='outline'
@@ -93,6 +122,7 @@ function NavBar() {
           )}
         </Box>
         <LoginDialog open={open} setOpen={handleClose} />
+        <TeacherLoginDialog open={teacherOpen} setOpen={handleTeacherClose} />
       </Toolbar>
     </NavigationBar>
   );

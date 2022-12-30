@@ -2,6 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
+import { TeacherLoginAPI } from "../Redux/actions/Teachers/TeacherLoginAction";
 
 import {
   Dialog,
@@ -27,7 +28,7 @@ import {
   Lock as LockIcon,
   Google as GoogleIcon,
 } from "@mui/icons-material";
-import { SignInSchema } from "../Yup/SignInSchema";
+import { TeacherSignInSchema } from "../Yup/SignInSchema";
 import { loginAPI } from "../Redux/actions/LoginAction";
 import { useContext } from "react";
 import { DataProvider } from "../Context/ContextAPI";
@@ -35,7 +36,7 @@ import { useNavigate } from "react-router-dom";
 
 const DialogTitleStyled = styled(DialogTitle)`
   text-align: center;
-  color: #4d148c;
+  color: #ff6600;
   font-family: "League Spartan", sans-serif;
   font-size: 3rem;
   font-weight: 600;
@@ -179,29 +180,29 @@ function LoginDialog({ open, setOpen }) {
   };
   const navigate = useNavigate();
 
-  const { account, setAccount } = useContext(DataProvider);
+  const { setTeacherAccount } = useContext(DataProvider);
   const handleAlert = () => {
     setOpenAlert(false);
     return;
   };
 
   const signInValues = {
-    rollNo: "",
+    email: "",
     password: "",
   };
-  const { LoginResponse, loading } = useSelector(
-    (state) => state.loginResponse
+  const { TeacherLoginResponse, loading } = useSelector(
+    (state) => state.TeacherLoginResponse
   );
   const { handleBlur, values, touched, errors, handleChange, handleSubmit } =
     useFormik({
       initialValues: signInValues,
-      validationSchema: SignInSchema,
+      validationSchema: TeacherSignInSchema,
       validateOnChange: true,
       onSubmit: async (values, action) => {
         console.log("worked");
         setLoadingButton(true);
         // ! API Call
-        const result = await dispatch(loginAPI(values));
+        const result = await dispatch(TeacherLoginAPI(values));
 
         // const LocalData = window.localStorage.getItem("user");
 
@@ -212,13 +213,14 @@ function LoginDialog({ open, setOpen }) {
         const statusCode = result.status;
         console.log(statusCode);
         if (statusCode === 200) {
-          setAccount(false);
+          // setAccount(false);
           console.log(result.data.user);
           console.log("UserLogin Login Successful");
           setOpenAlert(true);
           setOpen();
           setLoadingButton(false);
-          navigate("/");
+          setTeacherAccount(false);
+          navigate("/dashboard");
           action.resetForm();
           // setError(false);
         } else if (statusCode === 404) {
@@ -245,7 +247,7 @@ function LoginDialog({ open, setOpen }) {
           style: { borderRadius: "35px" },
         }}
       >
-        <DialogTitleStyled>Sign In</DialogTitleStyled>
+        <DialogTitleStyled>Sign in as Teacher</DialogTitleStyled>
 
         <DialogContentStyled>
           <FormGroup>
@@ -256,15 +258,15 @@ function LoginDialog({ open, setOpen }) {
                 </IconWrapper>
                 <TextFieldStyled
                   variant='standard'
-                  placeholder='Roll No'
+                  placeholder='Enter Email Address'
                   type='text'
                   InputProps={{ disableUnderline: true }}
-                  name='rollNo'
+                  name='email'
                   onChange={handleChange}
-                  value={values.rollNo}
+                  value={values.email}
                   onBlur={handleBlur}
                 />
-                {touched.rollNo && errors.rollNo ? (
+                {touched.email && errors.email ? (
                   <Typography style={{ fontSize: 12, color: "red" }}>
                     {errors.rollNo}
                   </Typography>

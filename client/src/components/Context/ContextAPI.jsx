@@ -7,9 +7,18 @@ function ContextAPI({ children }) {
 
   const [endPoint, setEndPoint] = React.useState("getITProjects");
   const [account, setAccount] = React.useState(true);
+  const [teacherAccount, setTeacherAccount] = React.useState(true);
+  console.log(teacherAccount);
   return (
     <DataProvider.Provider
-      value={{ endPoint, setEndPoint, account, setAccount }}
+      value={{
+        endPoint,
+        setEndPoint,
+        account,
+        setAccount,
+        teacherAccount,
+        setTeacherAccount,
+      }}
     >
       {children}
     </DataProvider.Provider>
