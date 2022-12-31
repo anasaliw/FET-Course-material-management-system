@@ -7,7 +7,9 @@ export const AddCourse = async (req, res) => {
   console.log("Semester" + " " + ITSemester);
   console.log("Subject" + " " + ITSubject);
   try {
-    const data = await ITCourseSchema({ ITSemester: { ITSubject: req.body } });
+    const data = await ITCourseSchema({
+      [ITSemester]: { [ITSubject]: req.body },
+    });
     await data.save();
     return res.status(200).json("ok");
   } catch (error) {

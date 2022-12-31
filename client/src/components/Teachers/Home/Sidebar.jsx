@@ -13,6 +13,7 @@ import Teacher from "../Teacher";
 import Forum from "../../forum/Forum";
 import { useContext } from "react";
 import { DataProvider } from "../../Context/ContextAPI";
+import AddCourse from "../AddCourse";
 
 const drawerWidth = 240;
 
@@ -117,6 +118,7 @@ export default function SideBar() {
         <Box sx={{ flexGrow: 1 }}>
           <Routes>
             <Route path='/dashboard' element={<Teacher />} />
+            <Route path='/dashboard/addCourse' element={<AddCourse />} />
             <Route path='/forum' element={<Forum />} />
           </Routes>
           {/* <Teacher /> */}
