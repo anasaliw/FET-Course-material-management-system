@@ -6,7 +6,7 @@ const commenterDetails = mongoose.Schema(
     commenterId: Schema.Types.ObjectId,
     answer: String,
     commenterName: String,
-    commenterRollNo: String,
+    commenterEmail: String,
   },
   { timestamps: true }
 );
@@ -19,7 +19,7 @@ const Discussion_Schema = mongoose.Schema(
     tags: [String],
 
     name: String,
-    rollNo: String,
+    email: String,
     id: Schema.Types.ObjectId,
     commenter: [commenterDetails],
   },

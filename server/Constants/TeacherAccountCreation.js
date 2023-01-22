@@ -1,56 +1,51 @@
 export const teachersAccount = [
   {
-    firstName: "Dr. Khalil-ur-Rehman",
-    lastName: "Khoumbhati",
+    name: "Dr. Khalil-ur-Rehman Khoumbhati",
     designation: "Professor (Dean, FET)",
     email: "khalil.khoumbati@usindh.edu.pk",
     password: "abcd123",
   },
   {
-    firstName: "Dr. Lachman Das",
-    lastName: "Dhomeja",
+    name: "Dr. Lachman Das Dhomeja",
     designation: "Professor",
     email: "lachhman@usindh.edu.pk",
     password: "abcd123",
   },
   {
-    firstName: "Mr. Imran Anwar",
-    lastName: "Ujjan",
+    name: "Mr. Imran Anwar Ujjan",
     designation: "Assistant Professor",
     email: "imran.ujan@usindh.edu.pk",
     password: "abcd123",
   },
   {
-    firstName: "Dr. Kamran Taj",
-    lastName: "Pathan",
+    name: "Dr. Kamran Taj Pathan",
+
     designation: "Professor",
     email: "kamran.taj@usindh.edu.pk",
     password: "abcd123",
   },
   {
-    firstName: "Dr. Bisharat Rasool",
-    lastName: "Memon",
+    name: "Dr. Bisharat Rasool Memon",
     designation: "Assistant Professor",
     email: "bisharat.memon@usindh.edu.pk",
     password: "abcd123",
   },
   {
-    firstName: "Dr. Abdul Waheed",
-    lastName: "Mahesar",
+    name: "Dr. Abdul Waheed Mahesar",
+
     designation: "Associate Professor",
     email: "waheed.mahessar@usindh.edu.pk",
     password: "abcd123",
   },
   {
-    firstName: "Dr. Zeeshan",
-    lastName: "Bhatti",
+    name: "Dr. Zeeshan Bhatti",
+
     designation: "Associate Professor",
     email: "zeeshan.bhatti@usindh.edu.pk",
     password: "abcd123",
   },
   {
-    firstName: "Mr. Kamran",
-    lastName: "Dahri",
+    name: "Mr. Kamran Dahri",
     designation: "Assistant Professor",
     email: "kamran.dahri@usindh.edu.pk",
     password: "abcd123",

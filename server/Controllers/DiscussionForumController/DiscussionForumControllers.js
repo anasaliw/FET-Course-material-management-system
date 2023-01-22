@@ -4,6 +4,7 @@ import { Mongoose } from "mongoose";
 
 // ! Post a question
 export const addQuestion = async (req, res) => {
+  console.log(req.body);
   try {
     const saveQuestion = new DiscussionSchema(req.body);
     await saveQuestion.save();

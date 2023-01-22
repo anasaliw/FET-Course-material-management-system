@@ -2,6 +2,7 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 // import Drawer from "@mui/material/Drawer";
+import ViewQuestion from "../../forum/ViewQuestion";
 import CssBaseline from "@mui/material/CssBaseline";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MuiDrawer from "@mui/material/Drawer";
@@ -13,7 +14,17 @@ import Teacher from "../Teacher";
 import Forum from "../../forum/Forum";
 import { useContext } from "react";
 import { DataProvider } from "../../Context/ContextAPI";
-import AddCourse from "../AddCourse";
+// import AddCourse from "../AddCourse";
+import CourseSelection from "../CourseSelection";
+import TeachersForum from "../../forum/TeachersForum";
+
+import PostMaterial from "../PostMaterial";
+import PostCourse from "../PostCourse";
+import TeacherViewQuestion from "../../forum/TeacherViewQuestion";
+import Material from "../../material/Material";
+import GetCourse from "../../material/GetCourse";
+import Course from "../../material/Course";
+import AskQuestion from "../../forum/AskQuestion/AskQuestion";
 
 const drawerWidth = 240;
 
@@ -82,6 +93,7 @@ export default function SideBar() {
     setOpen(false);
   };
   const isTrue = useMediaQuery("(max-width:600px)");
+
   // console.log(isTrue);
   return (
     <>
@@ -100,13 +112,13 @@ export default function SideBar() {
                   marginLeft: "auto",
                   marginRight: 15,
                   cursor: "pointer",
-                  color: "#FF6600",
+                  color: "#2f506c",
                 }}
                 onClick={handleDrawerClose}
               />
             ) : (
               <ArrowForwardIcon
-                style={{ color: "#FF6600", cursor: "pointer" }}
+                style={{ color: "#2f506c", cursor: "pointer" }}
                 onClick={handleDrawerOpen}
               />
             )}
@@ -118,8 +130,27 @@ export default function SideBar() {
         <Box sx={{ flexGrow: 1 }}>
           <Routes>
             <Route path='/dashboard' element={<Teacher />} />
-            <Route path='/dashboard/addCourse' element={<AddCourse />} />
-            <Route path='/forum' element={<Forum />} />
+            <Route path='/dashboard/addCourse' element={<CourseSelection />} />
+            <Route
+              path='/dashboard/postCourse/:dept/:semester/:subject'
+              element={<PostCourse />}
+            />
+            <Route
+              path='/dashboard/postMaterial/:dept/:semester/:subject'
+              element={<PostMaterial />}
+            />
+            <Route path='/forum' element={<TeachersForum />} />
+            <Route
+              path='forum/viewQuestion/:id'
+              element={<TeacherViewQuestion />}
+            />
+            <Route path='/material' element={<Material />} />
+            <Route path='/material/getCourse' element={<GetCourse />} />
+            <Route
+              path='/material/getCourse/:dept/:semester/:subject'
+              element={<Course />}
+            />
+            <Route path='forum/addQuestion' element={<AskQuestion />} />
           </Routes>
           {/* <Teacher /> */}
           {/* <Forum /> */}

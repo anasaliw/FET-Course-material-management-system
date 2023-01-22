@@ -23,8 +23,7 @@ export const teacherSignup = () => {
         }
 
         user = new TeachersSchema({
-          firstName: data.firstName,
-          lastName: data.lastName,
+          name: data.name,
           designation: data.designation,
           email: data.email,
           password: data.password,
