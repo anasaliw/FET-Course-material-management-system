@@ -13,6 +13,7 @@ import {
   getSingleQuestionReducer,
 } from "./reducers/DiscussionReducers/DiscussionReducers";
 import { TeacherLoginAPIReducer } from "./reducers/Teachers/TeacherLoginReducer";
+import { getCourseReducer } from "./reducers/getCourseReducer";
 
 const reducer = combineReducers({
   getProject: getThesisReducer,
@@ -22,6 +23,7 @@ const reducer = combineReducers({
   getAllQuestions: getQuestionsReducer,
   getSingleQuestion: getSingleQuestionReducer,
   TeacherLoginResponse: TeacherLoginAPIReducer,
+  getCourseResponse: getCourseReducer,
 });
 const middleware = [thunk];
 

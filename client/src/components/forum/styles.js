@@ -7,14 +7,16 @@ export const Container = styled(Box)`
   align-items: center;
   flex-direction: column;
   /* background-color: aliceblue; */
-  background-color: #fdf2e7;
-
+  /* background-color: white; */
   padding: 10px;
 `;
 export const Header = styled(Box)`
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 40px;
 `;
 export const Btn = styled(Button)`
   background-color: #0a95ff;

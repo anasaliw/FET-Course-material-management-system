@@ -9,6 +9,8 @@ import {
   Snackbar,
   Alert,
   CircularProgress,
+  DialogContent,
+  Dialog,
 } from "@mui/material";
 import Guidelines from "./Guidelines";
 import { useState } from "react";
@@ -21,19 +23,47 @@ import { Schema } from "mongoose";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+const BTN = styled(Button)`
+  margin-top: 20px;
+  background-color: #2344d3;
+  color: white;
+  padding: 15px 30px;
+  &:hover {
+    background-color: #3257ff;
+  }
+`;
+const SuccessTitle = styled(Typography)`
+  color: #2344d3;
+  font-weight: 600;
+  font-size: 25px;
+`;
+const Image = styled("img")({
+  width: 300,
+  height: 200,
+  objectFit: "cover",
+});
+
 function AskQuestion() {
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
   const [openAlert, setOpenAlert] = React.useState(false);
   const [handleLoading, setHandleLoading] = React.useState(false);
   const handleAlert = () => {
     setOpenAlert(false);
     return;
   };
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [QuestionValues, setUpValues] = useState({
     title: "",
     question: "",
     name: "",
-    rollNo: "",
+    email: "",
     id: Schema.ObjectId,
     tagsArray: [],
   });
@@ -41,14 +71,13 @@ function AskQuestion() {
   useEffect(() => {
     const localStorageData = JSON.parse(localStorage.getItem("user"));
     const userDetails = localStorageData?.data.user;
-    console.log(userDetails?.name);
-    console.log(userDetails?.rollNo);
-    console.log(userDetails?._id);
+
     setUpValues({
       ...QuestionValues,
       name: userDetails?.name,
-      rollNo: userDetails?.rollNo,
+      email: localStorageData?.data.email,
       id: userDetails?._id,
+      // email:localStorageData
       // tagsArray: [{ ...tags, tags }],
     });
   }, []);
@@ -79,8 +108,12 @@ function AskQuestion() {
   };
 
   const handleSubmit = async () => {
+    if (!localStorage.getItem("user")) {
+      console.log("please login first");
+      handleClickOpen();
+      return;
+    }
     setHandleLoading(true);
-
     const result = await dispatch(postQuestion(QuestionValues));
 
     console.log(loading);
@@ -116,22 +149,7 @@ function AskQuestion() {
       console.log(title);
       console.log(question);
       console.log(name);
-      // return;
-      // ! API Call
-      // const { data } = JSON.parse(localStorage.getItem("user"));
-      // const userDetails = data.user;
-      // console.log(userDetails.name);
-      // console.log(userDetails.rollNo);
-      // console.log(userDetails._id);
-      // setUpValues({
-      //   ...QuestionValues,
-      //   title: title,
-      //   question: question,
-      //   name: userDetails.name,
-      //   rollNo: userDetails.rollNo,
-      //   id: userDetails._id,
-      //   // tagsArray: [{ ...tags, tags }],
-      // });
+
       console.log(QuestionValues);
 
       const result = await dispatch(postQuestion(QuestionValues));
@@ -154,89 +172,120 @@ function AskQuestion() {
   });
 
   return (
-    <Container>
-      <Guidelines />
-      {/* // !Title */}
-      <TitleContainer>
-        <Typography sx={{ fontSize: 18, fontWeight: 600, marginBottom: 1 }}>
-          Title
-        </Typography>
-        <Typography sx={{ fontSize: 14, marginBottom: 2 }}>
-          Be specific and imagine you`re asking a question to another person.
-        </Typography>
-        <TextField
-          fullWidth
-          placeholder='Enter Title'
-          name='title'
-          onChange={(e) => handleChange(e)}
-          value={QuestionValues.title}
-        />
-        {touched.title && errors.title ? (
-          <Typography style={{ fontSize: 10, color: "red" }}>
-            {errors.title}
-          </Typography>
-        ) : null}
-      </TitleContainer>
-
-      {/* // ! Describe your Question */}
-      <TitleContainer>
-        <Typography sx={{ fontSize: 18, fontWeight: 600, marginBottom: 1 }}>
-          What are the details of your problem?
-        </Typography>
-        <Typography sx={{ fontSize: 14, marginBottom: 2 }}>
-          Introduce the problem and expand on what you put in the title. Minimum
-          20 characters.
-        </Typography>
-        <TextField
-          rows={6}
-          multiline
-          fullWidth
-          placeholder='Enter Title'
-          name='question'
-          onChange={(e) => handleChange(e)}
-          value={QuestionValues.question}
-        />
-        {touched.question && errors.question ? (
-          <Typography style={{ fontSize: 10, color: "red" }}>
-            {errors.question}
-          </Typography>
-        ) : null}
-      </TitleContainer>
-
-      <TitleContainer>
-        <Typography sx={{ fontSize: 18, fontWeight: 600, marginBottom: 1 }}>
-          Tags
-        </Typography>
-        <Typography sx={{ fontSize: 14, marginBottom: 2 }}>
-          Add up to 5 tags to describe what your question is about.
-        </Typography>
-        {tags.map((tags, index) => (
-          <TagsStyles>
-            <span>{tags} </span>
-            <SpanTag onClick={() => removeTag(index)}>&times;</SpanTag>
-          </TagsStyles>
-        ))}
-
-        <TextField
-          fullWidth
-          placeholder='Enter Tags'
-          onKeyDown={(e) => handleKeyDown(e)}
-        />
-      </TitleContainer>
-      <Button onClick={handleSubmit}>
-        Submit
-        {handleLoading && (
-          <Box sx={{ display: "flex", marginLeft: 30 }}>
-            <CircularProgress />
+    <>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        PaperProps={{ sx: { width: 600, height: 450 } }}
+      >
+        <DialogContent>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginTop: 7,
+              justifyContent: "center",
+            }}
+          >
+            <Image src={require("./login.jpg")} alt='loading' />
+            <SuccessTitle>Please Login First</SuccessTitle>
+            <BTN onClick={handleClose}> Close </BTN>
           </Box>
-        )}
-      </Button>
-      <Snackbar open={openAlert} autoHideDuration={4000} onClose={handleAlert}>
-        <Alert onClose={handleAlert} severity='success' sx={{ width: "100%" }}>
-          Your Question has successfully posted!
-        </Alert>
-      </Snackbar>
-    </Container>
+        </DialogContent>
+      </Dialog>
+      <Container>
+        <Guidelines />
+        {/* // !Title */}
+        <TitleContainer>
+          <Typography sx={{ fontSize: 18, fontWeight: 600, marginBottom: 1 }}>
+            Title
+          </Typography>
+          <Typography sx={{ fontSize: 14, marginBottom: 2 }}>
+            Be specific and imagine you`re asking a question to another person.
+          </Typography>
+          <TextField
+            fullWidth
+            placeholder='Enter Title'
+            name='title'
+            onChange={(e) => handleChange(e)}
+            value={QuestionValues.title}
+          />
+          {touched.title && errors.title ? (
+            <Typography style={{ fontSize: 10, color: "red" }}>
+              {errors.title}
+            </Typography>
+          ) : null}
+        </TitleContainer>
+
+        {/* // ! Describe your Question */}
+        <TitleContainer>
+          <Typography sx={{ fontSize: 18, fontWeight: 600, marginBottom: 1 }}>
+            What are the details of your problem?
+          </Typography>
+          <Typography sx={{ fontSize: 14, marginBottom: 2 }}>
+            Introduce the problem and expand on what you put in the title.
+            Minimum 20 characters.
+          </Typography>
+          <TextField
+            rows={6}
+            multiline
+            fullWidth
+            placeholder='Enter Title'
+            name='question'
+            onChange={(e) => handleChange(e)}
+            value={QuestionValues.question}
+          />
+          {touched.question && errors.question ? (
+            <Typography style={{ fontSize: 10, color: "red" }}>
+              {errors.question}
+            </Typography>
+          ) : null}
+        </TitleContainer>
+
+        <TitleContainer>
+          <Typography sx={{ fontSize: 18, fontWeight: 600, marginBottom: 1 }}>
+            Tags
+          </Typography>
+          <Typography sx={{ fontSize: 14, marginBottom: 2 }}>
+            Add up to 5 tags to describe what your question is about.
+          </Typography>
+          {tags.map((tags, index) => (
+            <TagsStyles>
+              <span>{tags} </span>
+              <SpanTag onClick={() => removeTag(index)}>&times;</SpanTag>
+            </TagsStyles>
+          ))}
+
+          <TextField
+            fullWidth
+            placeholder='Enter Tags'
+            onKeyDown={(e) => handleKeyDown(e)}
+          />
+        </TitleContainer>
+        <Button onClick={handleSubmit}>
+          Submit
+          {handleLoading && (
+            <Box sx={{ display: "flex", marginLeft: 30 }}>
+              <CircularProgress />
+            </Box>
+          )}
+        </Button>
+        <Snackbar
+          open={openAlert}
+          autoHideDuration={4000}
+          onClose={handleAlert}
+        >
+          <Alert
+            onClose={handleAlert}
+            severity='success'
+            sx={{ width: "100%" }}
+          >
+            Your Question has successfully posted!
+          </Alert>
+        </Snackbar>
+      </Container>
+    </>
   );
 }
 

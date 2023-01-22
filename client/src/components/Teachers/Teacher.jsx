@@ -25,7 +25,7 @@ function Teacher() {
           /> */}
           <img
             style={{ height: 180, width: "100%" }}
-            src={require("./assets/th.jpg")}
+            src={require("./assets/teacher.jpg")}
             alt='teacher'
             srcset=''
           />

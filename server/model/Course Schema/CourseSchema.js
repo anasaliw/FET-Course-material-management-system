@@ -5,7 +5,7 @@ const WeekDescription = mongoose.Schema(
   {
     teacherId: Schema.Types.ObjectId,
     teacherName: String,
-    teacherFiles: [String],
+    teacherFiles: String,
   },
   { timestamps: true }
 );
@@ -14,19 +14,29 @@ const SubjectDescription = mongoose.Schema(
   {
     courseContent: String,
     courseDescription: String,
-    week1: [WeekDescription],
-    week2: [WeekDescription],
-    week3: [WeekDescription],
-    week4: [WeekDescription],
-    week5: [WeekDescription],
-    week6: [WeekDescription],
-    week7: [WeekDescription],
-    week8: [WeekDescription],
-    week9: [WeekDescription],
-    week10: [WeekDescription],
+    week1: String,
+    week2: String,
+    week3: String,
+    week4: String,
+    week5: String,
+    week6: String,
+    week7: String,
+    week8: String,
+    week9: String,
+    week10: String,
   },
   { timestamps: true }
 );
+// week1: [WeekDescription],
+// week2: [WeekDescription],
+// week3: [WeekDescription],
+// week4: [WeekDescription],
+// week5: [WeekDescription],
+// week6: [WeekDescription],
+// week7: [WeekDescription],
+// week8: [WeekDescription],
+// week9: [WeekDescription],
+// week10: [WeekDescription],
 
 const ITS1Subjects = mongoose.Schema(
   {
@@ -42,6 +52,8 @@ const ITS1Subjects = mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// Schema of IT
 const ITS2Subjects = mongoose.Schema(
   {
     objectOrientedProgramming: SubjectDescription,
@@ -50,7 +62,6 @@ const ITS2Subjects = mongoose.Schema(
     digitalLogicDesignLab: SubjectDescription,
     principlesOfManagement: SubjectDescription,
     probabilityAndStatistics: SubjectDescription,
-    calculusAndAnalyticalGeometry: SubjectDescription,
     discreteStructures: SubjectDescription,
     communicationSkills: SubjectDescription,
   },
@@ -80,6 +91,7 @@ const ITS4Subjects = mongoose.Schema(
     professionalPractices: SubjectDescription,
     humanResourceManagement: SubjectDescription,
     computerCommunicationAndNetworks: SubjectDescription,
+    computerCommunicationAndNetworksLab: SubjectDescription,
   },
   { timestamps: true }
 );
@@ -92,6 +104,7 @@ const ITS5Subjects = mongoose.Schema(
     DatabaseAdministrationOrManagement: SubjectDescription,
     DatabaseAdministrationOrManagementLab: SubjectDescription,
     webSystemsOrTechnologies: SubjectDescription,
+    webSystemsOrTechnologiesLab: SubjectDescription,
     informationSystems: SubjectDescription,
     internetArchitectureAndProtocols: SubjectDescription,
   },
@@ -132,18 +145,16 @@ const ITS8Subjects = mongoose.Schema(
   },
   { timestamps: true }
 );
-
-// Schema of IT
 const ITCourse_Schema = mongoose.Schema(
   {
-    ITS1: ITS1Subjects,
-    ITS2: ITS2Subjects,
-    ITS3: ITS3Subjects,
-    ITS4: ITS4Subjects,
-    ITS5: ITS5Subjects,
-    ITS6: ITS6Subjects,
-    ITS7: ITS7Subjects,
-    ITS8: ITS8Subjects,
+    ITS1: [ITS1Subjects],
+    ITS2: [ITS2Subjects],
+    ITS3: [ITS3Subjects],
+    ITS4: [ITS4Subjects],
+    ITS5: [ITS5Subjects],
+    ITS6: [ITS6Subjects],
+    ITS7: [ITS7Subjects],
+    ITS8: [ITS8Subjects],
   },
   { timestamps: true }
 );

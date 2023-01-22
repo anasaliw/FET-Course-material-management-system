@@ -11,6 +11,8 @@ import Home from "./components/Home/Home";
 // import NavBar from "./components/Home/navBar/NavBar";
 import NavBarParent from "./components/Home/navBar/NavBarParent";
 import TitleSection from "./components/Home/navBar/TitleSection";
+import Course from "./components/material/Course";
+import GetCourse from "./components/material/GetCourse";
 import Material from "./components/material/Material";
 import Project from "./components/project/Project";
 import ViewProject from "./components/project/ViewProject";
@@ -30,7 +32,6 @@ function ClientRoutes() {
               <Route path='/' element={<Home />} />
               <Route path='/projects' element={<Project />} />
               <Route path='/forum' element={<Forum />} />
-              <Route path='/material' element={<Material />} />
               <Route path='/accreditation' element={<Accreditation />} />
               <Route path='/loginTeacher' element={<Login />} />
               <Route
@@ -39,6 +40,12 @@ function ClientRoutes() {
               ></Route>
               <Route path='forum/addQuestion' element={<AskQuestion />} />
               <Route path='forum/viewQuestion/:id' element={<ViewQuestion />} />
+              <Route path='/material' element={<Material />} />
+              <Route path='/material/getCourse' element={<GetCourse />} />
+              <Route
+                path='/material/getCourse/:dept/:semester/:subject'
+                element={<Course />}
+              />
             </Routes>
           </BrowserRouter>
         </>

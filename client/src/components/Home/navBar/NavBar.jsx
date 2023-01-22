@@ -96,7 +96,6 @@ function NavBar() {
           <NavLink to='/projects'> FYP Projects</NavLink>
           <NavLink to='/forum'> Forum </NavLink>
           <NavLink to='/material'>Course Material</NavLink>
-          <NavLink to='/accreditation'> Accreditation.. </NavLink>
         </Container>
         <Box style={{ marginLeft: "auto" }}>
           <LoginBTN

@@ -8,15 +8,17 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import { styled, Box } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import { useContext } from "react";
 import { DataProvider } from "../../Context/ContextAPI";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import ForumIcon from "@mui/icons-material/Forum";
 
 const LinkComponent = styled(ListItem)`
   & > a.active {
-    background-color: #ff6600;
+    background-color: #2f506c;
     color: white;
     & > div {
       color: white;
@@ -24,16 +26,18 @@ const LinkComponent = styled(ListItem)`
   }
 
   & > a:hover {
-    color: orange;
+    color: "#2f506c";
     font-weight: 600;
   }
 `;
 
 function NavList({ open }) {
+  const navigate = useNavigate();
   const { setTeacherAccount } = useContext(DataProvider);
   const logOut = async () => {
     console.log("Logout invoked form services");
     const user = localStorage.removeItem("teacher");
+    navigate("/");
     setTeacherAccount(true);
   };
   const listItem = [
@@ -41,10 +45,10 @@ function NavList({ open }) {
     {
       id: 2,
       name: "Forum",
-      icon: <HomeIcon />,
+      icon: <ForumIcon />,
       route: "forum",
     },
-    { id: 3, name: "Profile", icon: <PersonIcon />, route: "profile" },
+    { id: 3, name: "Material", icon: <LocalLibraryIcon />, route: "material" },
   ];
   return (
     <>
@@ -66,7 +70,7 @@ function NavList({ open }) {
                   minWidth: 0,
                   mr: open ? 3 : 1,
                   justifyContent: "center",
-                  color: "#FF6600",
+                  color: "#2f506c",
                 }}
               >
                 {list.icon}
@@ -96,7 +100,7 @@ function NavList({ open }) {
                   minWidth: 0,
                   mr: open ? 3 : 1,
                   justifyContent: "center",
-                  color: "#FF6600",
+                  color: "#2f506c",
                 }}
               >
                 <PowerSettingsNewIcon />

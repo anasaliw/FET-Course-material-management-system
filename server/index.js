@@ -13,6 +13,7 @@ import { teacherSignup } from "./Controllers/TeachersController/AccountCreation.
 const app = express();
 dotenv.config();
 // ! MiddleWares
+app.use("/uploads", express.static("uploads"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 app.use(cors());

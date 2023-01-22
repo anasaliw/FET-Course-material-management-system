@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const teacher_Schema = mongoose.Schema(
   {
-    firstName: String,
-    lastName: String,
+    name: String,
+
     email: String,
     designation: String,
     password: String,
