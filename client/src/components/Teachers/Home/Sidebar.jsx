@@ -25,6 +25,8 @@ import Material from "../../material/Material";
 import GetCourse from "../../material/GetCourse";
 import Course from "../../material/Course";
 import AskQuestion from "../../forum/AskQuestion/AskQuestion";
+import Project from "../../project/Project";
+import ViewProject from "../../project/ViewProject";
 
 const drawerWidth = 240;
 
@@ -151,6 +153,8 @@ export default function SideBar() {
               element={<Course />}
             />
             <Route path='forum/addQuestion' element={<AskQuestion />} />
+            <Route path='projects' element={<Project />} />
+            <Route path='projects/viewProject/:id' element={<ViewProject />} />
           </Routes>
           {/* <Teacher /> */}
           {/* <Forum /> */}

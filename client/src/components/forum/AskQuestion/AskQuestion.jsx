@@ -243,7 +243,7 @@ function AskQuestion() {
           ) : null}
         </TitleContainer>
 
-        <TitleContainer>
+        {/* <TitleContainer>
           <Typography sx={{ fontSize: 18, fontWeight: 600, marginBottom: 1 }}>
             Tags
           </Typography>
@@ -262,7 +262,7 @@ function AskQuestion() {
             placeholder='Enter Tags'
             onKeyDown={(e) => handleKeyDown(e)}
           />
-        </TitleContainer>
+        </TitleContainer> */}
         <Button onClick={handleSubmit}>
           Submit
           {handleLoading && (

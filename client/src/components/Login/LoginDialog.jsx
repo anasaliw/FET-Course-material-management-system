@@ -314,11 +314,6 @@ function LoginDialog({ open, setOpen }) {
                   Login
                 </LoginButton>
               </Box>
-              <OrText>OR</OrText>
-              <LoginWithGoogleButton>
-                <GoogleIcon />
-                <Typography>Login with Google</Typography>
-              </LoginWithGoogleButton>
             </StyledBox>
           </FormGroup>
         </DialogContentStyled>
