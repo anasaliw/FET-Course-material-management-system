@@ -14,6 +14,7 @@ import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import { useContext } from "react";
 import { DataProvider } from "../../Context/ContextAPI";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import NextWeekIcon from "@mui/icons-material/NextWeek";
 import ForumIcon from "@mui/icons-material/Forum";
 
 const LinkComponent = styled(ListItem)`
@@ -42,13 +43,14 @@ function NavList({ open }) {
   };
   const listItem = [
     { id: 1, name: "Dashboard", icon: <DashboardIcon />, route: "dashboard" },
+    { id: 2, name: "Projects", icon: <NextWeekIcon />, route: "projects" },
     {
-      id: 2,
+      id: 3,
       name: "Forum",
       icon: <ForumIcon />,
       route: "forum",
     },
-    { id: 3, name: "Material", icon: <LocalLibraryIcon />, route: "material" },
+    { id: 4, name: "Material", icon: <LocalLibraryIcon />, route: "material" },
   ];
   return (
     <>

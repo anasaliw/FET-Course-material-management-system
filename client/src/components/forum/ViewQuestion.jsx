@@ -62,6 +62,7 @@ function ViewQuestion() {
   );
 
   const data = getSingleQuestionResponse?.data?.data;
+  console.log("data", data);
   const [name, setName] = useState("");
   useEffect(() => {
     dispatch(getSingleQuestionAPI(id));
@@ -182,12 +183,20 @@ function ViewQuestion() {
         <>
           <Container>
             <Header>
-              <Typography
-                style={{ fontSize: 22, color: "#0074cc", paddingLeft: 20 }}
+              <Box
+                style={{
+                  display: "flex",
+                  paddingLeft: 20,
+                  flexDirection: "column",
+                }}
               >
-                {data.title}
-              </Typography>
-
+                <Typography style={{ fontSize: 22, color: "#0074cc" }}>
+                  {data.title}
+                </Typography>
+                <Typography style={{ fontSize: 18, marginTop: 20 }}>
+                  {data.question}
+                </Typography>
+              </Box>
               <Btn component={Link} to='/forum/addQuestion'>
                 Ask Question
               </Btn>
